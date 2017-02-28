@@ -1,15 +1,19 @@
 var express = require('express');
 var server = express();
 var port = process.env.PORT || 8080;
-
 var axios = require('axios');
 var apiKey = require('./secrets').darkskyAPIKey;
+
+server.use(express.static(__dirname + '/public'));
+
+server.get('/', function(request, response){
+  response.sendFile('index.html', {root: __dirname + '/public/html/'});
+});
 
 server.get('/weather/:lat,:lon', function(req, res){
   var latitude = req.params.lat;
   var longitude = req.params.lon;
   var url = `https://api.darksky.net/forecast/${apiKey}/${latitude},${longitude}`;
-
   axios.get(url)
        .then(function(response){
           res.send(response.data);
