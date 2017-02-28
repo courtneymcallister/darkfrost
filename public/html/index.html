@@ -4,9 +4,35 @@
     <meta charset="utf-8">
     <title>DarkFrost</title>
     <link rel="stylesheet" href="/css/main.css">
+    <script src="https://unpkg.com/vue"></script>
   </head>
   <body>
-
+    <div id="currently">
+      <header>
+        <h4>{{ location }}</h4>
+      </header>
+      <main>
+        <div>
+          <h1>{{ apparentTemperature }}</h1>
+        </div>
+        <div>
+          <h2>{{ summary }}</h2>
+          <div>
+            <img src="https://placehold.it/200x200" alt="icon">
+          </div>
+        </div>
+        <div>
+          <h3>{{ precipProbability }}</h3>
+          <h3>{{ humidity }}</h3>
+        </div>
+      </main>
+      <footer>
+        <h4>{{ time }}</h4>
+      </footer>
+    </div>
+    <div id="app">
+      <p>{{message}}</p>
+    </div>
     <script src="js/app.js"></script>
   </body>
 </html>
