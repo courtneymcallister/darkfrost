@@ -16,6 +16,11 @@ var currentlyWidget = new Vue({
     humidity: 0.61,
     location: 'Gainesville, FL'
   },
+  methods: {
+    iconUrl: function(iconString){
+      return `/images/${iconString}.png`;
+    }
+  },
   created: function(){
     axios.get('/weather/29.1,-81.4')
          .then(function(response){
