@@ -27,12 +27,9 @@ var currentlyWidget = new Vue({
       axios.get(url) //gets data and updates the state
            .then(function(response){
              var data = response.data.currently;
-             currentlyWidget.time = data.time;
-             currentlyWidget.summary = data.summary;
-             currentlyWidget.icon = data.icon;
-             currentlyWidget.apparentTemperature = data.apparentTemperature;
-             currentlyWidget.precipProbability = data.precipProbability;
-             currentlyWidget.humidity = data.humidity;
+             Object.keys(data).forEach(function(dataLabel){
+               currentlyWidget[dataLabel] = data[dataLabel];
+             })
            })
            .catch(function(error){
              console.log(error);
@@ -40,7 +37,7 @@ var currentlyWidget = new Vue({
     },
     updateWeather: function(){
       this.getWeather(this.latitude,this.longitude);
-    }
+    },
   },
   created: function(){
     this.getWeather(29.1, -81.4);
@@ -57,26 +54,25 @@ var dailyWidget = new Vue({
   methods: {
     iconUrl: function(iconString){
       return `images/${iconString}.png`;
+    },
+    getWeather: function(lat, lon){
+      var url = `/weather/${lat},${lon}`;
+      axios.get(url) //gets data and updates the state
+           .then(function(response){
+             var data = response.data.daily;
+             Object.keys(data).forEach(function(dataLabel){
+               dailyWidget[dataLabel] = data[dataLabel];
+             })
+           })
+           .catch(function(error){
+             console.log(error);
+           });
+    },
+    updateWeather: function(){
+      this.getWeather(this.latitude,this.longitude);
     }
   },
   created: function(){
-    axios.get('/weather/29.1, -81.4')
-         .then(function(response){
-           var data = response.data.daily;
-           dailyWidget.summary = data.summary;
-           dailyWidget.icon = data.icon;
-
-            // Object.keys(dailyWidget._data)
-            //       .forEach(function(property){
-            //         var data = response.data.daily;
-            //         dataKey = eval('dailyWidget.' + property);
-            //         dataKey = eval('data.' + property);
-            //         console.log(dataKey);
-            //       })
-
-         })
-         .catch(function(error){
-           console.log(error);
-         });
+    this.getWeather(29.1, -81.4);
   }
 });
