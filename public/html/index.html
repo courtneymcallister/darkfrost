@@ -8,6 +8,25 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    <div id="hourly">
+      <header>
+        <div>
+          {{ summary }}
+        </div>
+        <img :src="getMainIcon()">
+      </header>
+      <main>
+        <ul>
+          <li v-for='hour in hours'>
+            <img :src="getHourlyIcon(hour.icon)" alt="hour.icon"> - {{ hour.summary }} - {{ hour.apparentTemperature }} - {{ getDate(hour.time) }}
+          </li>
+        </ul>
+      </main>
+    </div>
+
+
+
+    <hr>
     <div id="currently">
       <header>
         <input v-model="latitude" type="number" placeholder="Latitude:">
@@ -22,7 +41,7 @@
         <div>
           <h2>{{ summary }}</h2>
           <div>
-            <img :src="iconUrl(icon)" alt="icon">
+            <img :src="iconUrl(icon)">
           </div>
         </div>
         <div>

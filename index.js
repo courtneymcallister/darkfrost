@@ -26,7 +26,7 @@ server.get('/weather/:lat,:lon', function(req, res){
 
 server.get('/location/:address', function(req, res){
   var address = req.params.address;
-  var url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${geocodeApiKey}`
+  var url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${geocodeAPIKey}`
   axios.get(url)
      .then(function(response){
         res.send(response.data);
