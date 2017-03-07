@@ -1,0 +1,203 @@
+/*.page-container{
+  background-image: url(https://www.novosco.com/images/easyblog_articles/36/b2ap3_large_Cloud-Sky.jpg);
+
+}*/
+
+/*currentlyWidget stylings: */
+.currently-container{
+  height: 350px;
+  width: 80%;
+  text-align: center;
+  font-family: sans-serif;
+  margin-left: 10%
+}
+.search-bar{
+  margin-top: 8px;
+  float:right;
+  margin-right: 15px;
+}
+
+.currently-header {
+  width: 100%;
+  background-color: lightblue;
+  padding-top: 3px;
+  display: inline-block;
+
+}
+.current-temp{
+  display: inline;
+  float:left;
+  padding-top: 35px;
+}
+.current-temp p{
+  font-weight: 300;
+}
+
+.current-info{
+  margin-left:400px;
+  text-align: left;
+  font-weight: 400;
+}
+
+.current-info h4{
+  font-weight: 300;
+}
+
+.header-text {
+  text-align: left;
+  display: inline-block;
+  margin: 10px;
+  font-weight: 300;
+}
+.main-container{
+  display: inline-block;
+}
+
+.main-container h1{
+  display: inline-block;
+  height: 100px;
+  padding-left: 20px;
+}
+.main-container img{
+  height: 150px;
+  width: 150px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/*minutelyWidget stylings: */
+.minute-container{
+  height: 450px;
+  width: 30%;
+  margin-left: 10%;
+  float: left;
+  font-family: sans-serif;
+}
+.minute-header{
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;
+  height: 32px;
+  padding-top: 12px;
+  display: inline-block;
+}
+.minute-header h4{
+  font-weight: 300;
+  display: inline;
+}
+
+.minute-list{
+  list-style-type: none;
+  height: 270px;
+  overflow-y: scroll;
+  padding-left: 0;
+  font-family: sans-serif;
+
+
+}
+.minute-icon img{
+  height:100px;
+  padding-left: 15px;
+}
+.minute-icon h4{
+  display: inline-block;
+  font-weight: lighter;
+  vertical-align: top;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.minute-info{
+  height: 40px;
+  border-bottom: black;
+  background-color: lightgrey;
+  padding-left: 18px;
+  padding-top: 5px;
+  font-weight: 300;
+}
+
+/*hourlyWidget stylings:*/
+.hour-container{
+  height: 450px;
+  width: 46%;
+  margin-left: 44%;
+  font-family: sans-serif;
+}
+
+.hour-header{
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;
+  height: 32px;
+  padding-top: 12px;
+  display: inline-block;
+}
+.hour-header h4{
+  font-weight: 300;
+  display: inline;
+}
+
+.main-hour-icon img{
+  height: 100px;
+  padding-left: 15px;
+}
+.main-hour-icon h4{
+  display: inline-block;
+  font-weight: lighter;
+  vertical-align: top;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.hour-list{
+  overflow-y: scroll;
+  height: 270px;
+  background-color: lightgrey;
+  list-style-type: none;
+  padding-left: 15px;
+}
+.hour-info{
+  font-weight: 300;
+}
+.hour-info img{
+  height: 50px;
+}
+
+/*dailyWidget stylings: */
+.daily-container{
+  width: 80%;
+  height: 400px;
+  margin-left: 10%;
+  margin-top: 20px;
+  font-family: sans-serif;
+}
+
+.day-container{
+  border: dotted 1px black;
+  width: 260px;
+  height: 320px;
+  float:left;
+  text-align: center;
+  vertical-align: center;
+  margin: 20px;
+}
+
+.day-header{
+  width: 100%;
+  background-color: lightblue;
+  text-align: center;
+  height: 32px;
+  padding-top: 12px;
+  display: inline-block;
+}
+.day-header h4{
+  font-weight: 300;
+  display: inline;
+}
+
+.day-icon {
+  height: 150px;
+  width: 150px;
+}
+
+.day-list {
+  list-style-type: none;
+}
