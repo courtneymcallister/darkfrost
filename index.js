@@ -2,8 +2,8 @@ var express = require('express');
 var server = express();
 var port = process.env.PORT || 8080;
 var axios = require('axios');
-var darkskyAPIKey = require('./secrets').darkskyAPIKey;
-var geocodeAPIKey = require('./secrets').geocodeAPIKey;
+var darkskyAPIKey = process.env.DARKSKY_API || require('./secrets').darkskyAPIKey;
+var geocodeAPIKey = process.env.GEOCODE_API || require('./secrets').geocodeAPIKey;
 
 server.use(express.static(__dirname + '/public'));
 
