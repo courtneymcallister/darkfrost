@@ -62,9 +62,13 @@
           </div>
           <div >
             <ul class="hour-list">
-              <li v-for='hour in hours' class="hour-info">
-                <img class="hour-icon" :src="getHourlyIcon(hour.icon)" alt="hour.icon"> {{ hour.apparentTemperature }}&#8457; || {{ hour.summary }} || {{ getDate(hour.time) }}
-              </li>
+                <li v-for='hour in hours' class="hour-info">
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td id='table-date'>{{ getDate(hour.time) }}</td><td id="table-icon"><img class="hour-icon" :src="getHourlyIcon(hour.icon)" alt="hour.icon"> {{ hour.apparentTemperature }}&#8457; </td><td>{{ hour.summary }}</td>
+                    </tr>
+                  </table>
+                </li>
             </ul>
           </div>
         </main>

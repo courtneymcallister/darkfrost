@@ -61,7 +61,8 @@ var currentlyWidget = new Vue({
       var monthOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
       var hour = date.getHours();
       var minutes = date.getMinutes();
-      return `${dayOfTheWeek[weekday]}, ${monthOfTheYear[month]} ${day} at ${hour % 12}:${minutes < 10 ? '0' + minutes : minutes}`;
+      var aOrP = ['a.m.', 'p.m.']
+      return `${dayOfTheWeek[weekday]}, ${monthOfTheYear[month]} ${day} at ${(hour === 0 || hour === 12) ? 12 : hour % 12}:${minutes < 10 ? '0' + minutes : minutes} ${hour < 12 ? aOrP[0]: aOrP[1]}`;
     },
     formatPercents: function(percent){
       return percent * 100;
@@ -103,11 +104,13 @@ var hourlyWidget = new Vue({
     getDate: function(seconds){
       var date = new Date(seconds * 1000);
       var month = date.getMonth();
-      var year = date.getFullYear();
       var day = date.getDay();
       var hour = date.getHours();
       var minutes = date.getMinutes();
-      return `${month + 1}/${day}/${year} ${hour}:0${minutes}`;
+      var dayOfTheWeek = ['Sunday','Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var monthOfTheYear = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+      var aOrP = ['a.m.', 'p.m.']
+      return `${monthOfTheYear[month]} ${day}, ${(hour === 0 || hour === 12) ? 12 : hour % 12}:0${minutes} ${hour < 12 ? aOrP[0]: aOrP[1]}`;
     }
   },
   created: function(){

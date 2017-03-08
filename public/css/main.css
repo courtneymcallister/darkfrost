@@ -6,7 +6,7 @@
   text-align: center;
   font-family: sans-serif;
   margin-left: 10%;
-  /*background-image: url(https://www.novosco.com/images/easyblog_articles/36/b2ap3_large_Cloud-Sky.jpg);*/
+  background-image: url(https://www.novosco.com/images/easyblog_articles/36/b2ap3_large_Cloud-Sky.jpg);
 
 }
 .search-bar{
@@ -20,6 +20,7 @@
   background-color: lightblue;
   padding-top: 3px;
   display: inline-block;
+  text-align: left;
 
 }
 .current-temp{
@@ -35,10 +36,12 @@
   margin-left:400px;
   text-align: left;
   font-weight: 400;
+
 }
 
 .current-info h4{
   font-weight: 300;
+
 }
 
 .header-text {
@@ -70,7 +73,7 @@
 /*minutelyWidget stylings: */
 .minute-container{
   height: 450px;
-  width: 30%;
+  width: 26%;
   margin-left: 10%;
   float: left;
   font-family: sans-serif;
@@ -121,8 +124,8 @@
 /*hourlyWidget stylings:*/
 .hour-container{
   height: 450px;
-  width: 46%;
-  margin-left: 44%;
+  width: 50%;
+  margin-left: 40%;
   font-family: sans-serif;
 }
 
@@ -138,6 +141,7 @@
   font-weight: 300;
   display: inline;
 }
+
 
 .main-hour-icon img{
   height: 100px;
@@ -159,9 +163,20 @@
 }
 .hour-info{
   font-weight: 300;
+  height: 60px;
+  border-bottom: 1px black;
 }
 .hour-info img{
-  height: 50px;
+  height: 40px;
+  vertical-align: middle;
+}
+
+#table-date{
+  width: 200px;
+}
+
+#table-icon{
+  width: 200px;
 }
 
 /*dailyWidget stylings: */
@@ -174,15 +189,21 @@
 }
 
 .day-container{
-  border: dotted 1px black;
   width: 260px;
   height: 320px;
   float:left;
   text-align: center;
   vertical-align: center;
-  margin-left: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
+  font-weight:300;
+  background: rgba(255, 225, 225, 0.5);
+}
+.day-container:hover{
+  background: rgba(225, 225, 225, 1);
+}
 
+.day-container h3{
+  font-weight: 400;
 }
 
 .day-header{
@@ -206,4 +227,8 @@
 .day-list {
   list-style-type: none;
   float: left;
+  padding-left:5px;
+  align-content: center;
+  background-image: url(https://www.novosco.com/images/easyblog_articles/36/b2ap3_large_Cloud-Sky.jpg);
+  margin-top: 0;
 }
